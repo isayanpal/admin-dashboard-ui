@@ -11,7 +11,7 @@ export const Sidebar = forwardRef(({ collapsed }, ref) => {
     <aside
       ref={ref}
       className={cn(
-        "fixed z-[100] flex h-full w-[240px] flex-col overflow-x-hidden border-r border-zinc-300 bg-white [transition:_width_300ms_cubic-bezier(0.4,_0,_0.2,_1),_left_300ms_cubic-bezier(0.4,_0,_0.2,_1),_background-color_150ms_cubic-bezier(0.4,_0,_0.2,_1),_border_150ms_cubic-bezier(0.4,_0,_0.2,_1)] dark:border-zinc-700 dark:bg-zinc-950",
+        "app-sidebar fixed z-[100] flex h-full w-[240px] flex-col overflow-x-hidden border-r border-zinc-300 bg-white [transition:_width_300ms_cubic-bezier(0.4,_0,_0.2,_1),_left_300ms_cubic-bezier(0.4,_0,_0.2,_1),_background-color_150ms_cubic-bezier(0.4,_0,_0.2,_1),_border_150ms_cubic-bezier(0.4,_0,_0.2,_1)] dark:border-zinc-700 dark:bg-zinc-950",
         collapsed ? "md:w-[70px] md:items-center" : "md:w-[240px]",
         collapsed ? "max-md:-left-full" : "max-md:left-0"
       )}

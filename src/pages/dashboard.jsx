@@ -1,8 +1,8 @@
 import { summaryCardData } from "../constants/data";
-import SummaryCard from "../components/custom/summary-card";
-import { Chart } from "../components/custom/chart";
-import { Modal } from "../components/custom/modal";
-import DataTable from "../components/custom/data-table";
+import SummaryCard from "../components/private/summary-card";
+import { Chart } from "../components/private/chart";
+import { Modal } from "../components/private/modal";
+import DataTable from "../components/private/data-table";
 
 const Dashboard = () => {
 

@@ -1,4 +1,4 @@
-import { Chart } from "../components/custom/chart";
+import { Chart } from "../components/private/chart";
 
 export default function AnalyticsPage() {
   return (

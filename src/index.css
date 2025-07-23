@@ -4,11 +4,14 @@
 
 
 @layer base {
+  body:has(#me-modal-toggle:checked, .search-modal) .app-sidebar {
+    filter: blur(8px);
+  }
   :root {
     font-family: "Outfit", sans-serif;
   }
   body {
-    @apply [scrollbar-color:_#cbd5e1_transparent] dark:[scrollbar-color:_#334155_transparent];
+    @apply [scrollbar-color:_#18181b_transparent] dark:[scrollbar-color:_#334155_transparent] [scrollbar-width:_thin] [scrollbar-gutter:stable];
   }
 }
 
