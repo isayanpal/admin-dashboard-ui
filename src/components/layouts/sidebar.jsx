@@ -27,14 +27,9 @@ export const Sidebar = forwardRef(({ collapsed }, ref) => {
       <div className="flex w-full flex-col gap-y-4 overflow-y-auto overflow-x-hidden p-3 [scrollbar-width:_thin]">
         {navbarLinks.map((navbarLink) => (
           <nav
-            key={navbarLink.title}
+            key={navbarLink.links[0].label}
             className={cn("sidebar-group", collapsed && "md:items-center")}
           >
-            <p
-              className={cn("sidebar-group-title", collapsed && "md:w-[45px]")}
-            >
-              {navbarLink.title}
-            </p>
             {navbarLink.links.map((link) => (
               <NavLink
                 key={link.label}

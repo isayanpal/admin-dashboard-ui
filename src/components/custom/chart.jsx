@@ -1,16 +1,9 @@
-import {
-  Area,
-  AreaChart,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
-import useTheme from "../../contexts/theme-context";
-import { chartData } from "../../constants/data";
+import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
+import useTheme from "../../contexts/theme-context"
+import { chartData } from "../../constants/data"
 
 export const Chart = () => {
-  const { themeMode } = useTheme();
+  const { themeMode } = useTheme()
 
   return (
     <div className="card col-span-1 md:col-span-2 lg:col-span-4">
@@ -18,8 +11,8 @@ export const Chart = () => {
         <p className="card-title">Analytics</p>
       </div>
       <div className="card-body p-0">
-        <ResponsiveContainer width="100%" height={300}>
-          <AreaChart
+        <ResponsiveContainer width="100%" height={300} className="outline-none focus:outline-none">
+          <LineChart
             data={chartData}
             margin={{
               top: 0,
@@ -27,7 +20,9 @@ export const Chart = () => {
               left: 0,
               bottom: 0,
             }}
+            style={{ outline: "none" }}
           >
+            <CartesianGrid strokeDasharray="3 3" stroke={themeMode === "light" ? "#e2e8f0" : "#334155"}/>
             <defs>
               <linearGradient id="colorTotal" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor="#f43f5e" stopOpacity={0.8} />
@@ -35,7 +30,6 @@ export const Chart = () => {
               </linearGradient>
             </defs>
             <Tooltip cursor={false} formatter={(value) => `$${value}`} />
-
             <XAxis
               dataKey="name"
               strokeWidth={0}
@@ -49,17 +43,10 @@ export const Chart = () => {
               tickFormatter={(value) => `$${value}`}
               tickMargin={6}
             />
-
-            <Area
-              type="monotone"
-              dataKey="total"
-              stroke="#f43f5e"
-              fillOpacity={1}
-              fill="url(#colorTotal)"
-            />
-          </AreaChart>
+            <Line type="linear" dataKey="total" stroke="#f43f5e" strokeWidth={2} isAnimationActive={true}/>
+          </LineChart>
         </ResponsiveContainer>
       </div>
     </div>
-  );
-};
+  )
+}
